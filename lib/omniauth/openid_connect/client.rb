@@ -1,6 +1,6 @@
 module OmniAuth
   module OpenIDConnect
-    class Client < OpenIDConnect::Client
+    class Client < ::OpenIDConnect::Client
       def access_token!(*args)
         headers, params, http_client, options = authenticated_context_from(*args)
         params[:scope] = Array(options.delete(:scope)).join(' ') if options[:scope].present?
