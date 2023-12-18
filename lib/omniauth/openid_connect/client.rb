@@ -1,4 +1,4 @@
-module Omniauth
+module OmniAuth
   module OpenIDConnect
     class Client < OpenIDConnect::Client
       def access_token!(*args)
