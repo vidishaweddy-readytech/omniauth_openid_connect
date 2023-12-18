@@ -102,7 +102,7 @@ module OmniAuth
       end
 
       def client
-        @client ||= ::OpenIDConnect::Client.new(client_options)
+        @client ||= ::Omniauth::OpenIDConnect::Client.new(client_options)
       end
 
       def config
