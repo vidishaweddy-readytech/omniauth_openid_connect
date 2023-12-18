@@ -7,6 +7,7 @@ require 'open-uri'
 require 'omniauth'
 require 'openid_connect'
 require 'forwardable'
+require 'omniauth/openid_connect/client'
 
 module OmniAuth
   module Strategies
