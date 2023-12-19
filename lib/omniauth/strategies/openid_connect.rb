@@ -74,7 +74,7 @@ module OmniAuth
 
       info do
         {
-          name: user_info.name || user_info.full_name,
+          name: user_info.name || [user_info.given_name, user_info.full_name].reject(&:blank?).join(" "),
           email: user_info.email,
           email_verified: user_info.email_verified,
           nickname: user_info.preferred_username,
@@ -257,7 +257,7 @@ module OmniAuth
         if access_token.id_token
           decoded = decode_id_token(access_token.id_token).raw_attributes
 
-          @user_info = decoded
+          @user_info = ::OpenIDConnect::ResponseObject::UserInfo.new decoded
         else
           @user_info = access_token.userinfo!
         end
