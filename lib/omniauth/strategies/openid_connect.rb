@@ -74,7 +74,7 @@ module OmniAuth
 
       info do
         {
-          name: user_info.name || [user_info.given_name, user_info.full_name].reject(&:blank?).join(" "),
+          name: user_info.name || [user_info.given_name, user_info.family_name].reject(&:blank?).join(" "),
           email: user_info.email,
           email_verified: user_info.email_verified,
           nickname: user_info.preferred_username,
